@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CustomView</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="roundrect_info"> 通过drawRoundRect 绘制一个STROKE边框矩形 \n问题：设置setStrokeWidth 之后发现圆角出现加深现象.失败！！！</string>
+    <string name="roundrectpath_info"> 通过Path.addRoundRect 和 canvas.drawPath 绘制一个STROKE边框矩形\n问题：设置setStrokeWidth 之后发现圆角出现加深现象.失败！！！</string>
+    <string name="roundrectpathdouble_info">通过Path.addRoundRect 和 canvas.drawPath 绘制一个STROKE边框矩形\n问题：设置setStrokeWidth 之后发现圆角出现加深现象\n解决方案：\n用path 构建一个圆角矩形\n然后path往里面偏移你想要的 像素 接着画第二个矩形\n</string>
+    <string name="shaprect_info"> 通过xml的shap设置矩形边框。成功</string>
+    <string name="clippath_info"> 需求在stroke边框矩形绘制一个进度的状态，通过path 先后画两个矩形，取相交部分，实现左边为边框矩形，右边为直角矩形，成功绘制进度条</string>
+
+</resources>
