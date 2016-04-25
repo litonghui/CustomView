@@ -15,7 +15,14 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
     public void onRectClick(View view){
-       startActivity(new Intent(this,RectActivity.class));
+       startActivity(new Intent(this, RectActivity.class));
+    }
+    public void onBezierClick(View view){
+        startActivity(new Intent(this,BezierActivity.class));
+    }
+
+    public void onRxClick(View view){
+        startActivity(new Intent(this,ReactivexActivity.class));
     }
 
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_big"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="left|center_vertical"
+        android:layout_margin="15dp"
+        android:scaleType="fitXY"
+        android:background="@mipmap/icon_airplan_open"
+        android:onClick="onFlyClick"/>
+
+    <ImageView
+        android:id="@+id/iv_small"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_gravity="right|top"
+        android:scaleType="fitXY"
+        android:background="@mipmap/icon_airplan_open"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="50dp" />
+</FrameLayout>

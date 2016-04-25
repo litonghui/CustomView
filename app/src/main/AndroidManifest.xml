@@ -18,6 +18,8 @@
         </activity>
 
         <activity android:name=".activity.RectActivity"/>
+        <activity android:name=".activity.BezierActivity"/>
+        <activity android:name=".activity.ReactivexActivity"/>
     </application>
 
 </manifest>
