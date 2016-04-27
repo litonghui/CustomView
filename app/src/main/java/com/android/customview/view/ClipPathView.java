@@ -11,6 +11,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.android.customview.R;
+import com.android.customview.tools.Utils;
 
 /**
  * Created by litonghui on 2016/4/19.
@@ -41,9 +42,12 @@ public class ClipPathView extends View {
 
     private final Path mPath = new Path();
 
+    private Context mContext;
+
     private void init() {
         mDensity = getResources().getDisplayMetrics().density;
         setBackgroundResource(R.drawable.shap_stroke);
+        mContext = getContext();
     }
 
     @Override
@@ -53,13 +57,13 @@ public class ClipPathView extends View {
         int h = getHeight();
         if (w == 0 || h == 0)
             return;
-        mRoundRect.left = 2;
-        mRoundRect.top = 2;
-        mRoundRect.right = w - 2;
-        mRoundRect.bottom = h - 2;
+        mRoundRect.left = Utils.dx2dp(mContext,2f);
+        mRoundRect.top = Utils.dx2dp(mContext,2f);
+        mRoundRect.right = w - Utils.dx2dp(mContext,2f);
+        mRoundRect.bottom = h - Utils.dx2dp(mContext,2f);
         float r = 2.5f * mDensity;
         mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setColor(0xFFFF0000);
+        mPaint.setColor(0xFFF26E66);
         canvas.drawRoundRect(mRoundRect, r, r, mPaint);
         canvas.save();   //save：用来保存Canvas的状态。save之后，可以调用Canvas的平移、放缩、旋转、错切、裁剪等操作。
         mPaint.reset();  //重置绘制路线，即隐藏之前绘制的轨迹
@@ -81,10 +85,10 @@ public class ClipPathView extends View {
          *
          * Op.XOR，A和B的补集范围，此例中即A除去B以外的范围，只有在此范围内的绘制内容才会被显示；
          */
-        mRoundRect.left = 2;
-        mRoundRect.top = 2;
-        mRoundRect.right = w / 2 - 2;
-        mRoundRect.bottom = h - 2;
+        mRoundRect.left = Utils.dx2dp(mContext,2f);
+        mRoundRect.top = Utils.dx2dp(mContext,2f);
+        mRoundRect.right = w / 2 - Utils.dx2dp(mContext,2f);
+        mRoundRect.bottom = h - Utils.dx2dp(mContext,2f);
         mPaint.setAntiAlias(true);
         mPaint.setColor(0xFFF26E66);
         canvas.drawRect(mRoundRect, mPaint);
