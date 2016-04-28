@@ -25,4 +25,8 @@ public class MainActivity extends Activity {
         startActivity(new Intent(this,ReactivexActivity.class));
     }
 
+    public void onScrollClick(View view) {
+        startActivity(new Intent(this, ScrollActivity.class));
+    }
+
 }
