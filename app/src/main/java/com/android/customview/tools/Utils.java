@@ -1,7 +1,10 @@
 package com.android.customview.tools;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
+import android.net.Uri;
+import android.text.TextUtils;
 import android.util.TypedValue;
 import android.widget.TextView;
 
@@ -33,4 +36,13 @@ public class Utils {
         tv.setText(text);
         return tv;
     }
+    public static void unInstallApk(Context context , String pkg){
+        if(TextUtils.isEmpty(pkg))
+            return;
+        Uri uri = Uri.parse("package:"+pkg);
+        Intent intent = new Intent(Intent.ACTION_DELETE);
+        intent.setData(uri);
+        context.startActivity(intent);
+    }
+
 }

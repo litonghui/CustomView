@@ -22,6 +22,7 @@
         <activity android:name=".activity.BezierActivity"/>
         <activity android:name=".activity.ReactivexActivity"/>
         <activity android:name=".activity.ScrollActivity"/>
+        <activity android:name=".activity.UninstallActivity"/>
     </application>
 
 </manifest>

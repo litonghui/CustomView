@@ -28,5 +28,9 @@ public class MainActivity extends Activity {
     public void onScrollClick(View view) {
         startActivity(new Intent(this, ScrollActivity.class));
     }
+    public void onUninstallClick(View view){
+        startActivity(new Intent(this,UninstallActivity.class));
+    }
+
 
 }

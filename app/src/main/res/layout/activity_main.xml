@@ -29,6 +29,12 @@
        <Button
            android:layout_width="fill_parent"
            android:layout_height="45dp"
+           android:text="软件卸载"
+           android:layout_marginTop="5dp"
+           android:onClick="onUninstallClick"/>
+       <Button
+           android:layout_width="fill_parent"
+           android:layout_height="45dp"
            android:text="RxAndroid"
            android:layout_marginTop="5dp"
            android:onClick="onRxClick"
