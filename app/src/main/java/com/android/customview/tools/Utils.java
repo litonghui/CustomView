@@ -12,6 +12,16 @@ import android.widget.TextView;
  * Created by litonghui on 2016/4/27.
  */
 public class Utils {
+
+    public static int getScreemWidth(Context context){
+        return context!=null?context.getResources().getDisplayMetrics().widthPixels:0;
+    }
+
+    public static int getScreenHeight(Context context){
+        return context!=null?context.getResources().getDisplayMetrics().heightPixels:0;
+    }
+
+
     public static float dp2px(Context context, float dp) {
         float density = context.getResources().getDisplayMetrics().density;
         return dp * density + 0.5f;

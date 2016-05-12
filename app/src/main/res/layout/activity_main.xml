@@ -35,6 +35,12 @@
        <Button
            android:layout_width="fill_parent"
            android:layout_height="45dp"
+           android:text="动画弹窗"
+           android:layout_marginTop="5dp"
+           android:onClick="onDialogClick"/>
+       <Button
+           android:layout_width="fill_parent"
+           android:layout_height="45dp"
            android:text="RxAndroid"
            android:layout_marginTop="5dp"
            android:onClick="onRxClick"

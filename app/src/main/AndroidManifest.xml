@@ -23,6 +23,7 @@
         <activity android:name=".activity.ReactivexActivity"/>
         <activity android:name=".activity.ScrollActivity"/>
         <activity android:name=".activity.UninstallActivity"/>
+        <activity android:name=".activity.DialogActivity"/>
     </application>
 
 </manifest>

@@ -31,6 +31,10 @@ public class MainActivity extends Activity {
     public void onUninstallClick(View view){
         startActivity(new Intent(this,UninstallActivity.class));
     }
+    public void onDialogClick(View view){
+        startActivity(new Intent(this,DialogActivity.class));
+    }
+
 
 
 }
