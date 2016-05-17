@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.text.TextUtils;
+
 import com.android.customview.tools.Utils;
 
 import java.util.ArrayList;

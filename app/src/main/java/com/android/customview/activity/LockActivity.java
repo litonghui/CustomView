@@ -5,10 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.android.customview.R;
-import com.android.customview.listener.OnListener;
 import com.android.customview.view.SeleterView;
 
 /**

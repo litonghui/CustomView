@@ -11,7 +11,6 @@ import com.android.customview.R;
 
 import rx.Observable;
 import rx.Observer;
-import rx.Scheduler;
 import rx.Subscriber;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;

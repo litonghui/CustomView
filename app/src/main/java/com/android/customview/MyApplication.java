@@ -1,7 +1,6 @@
 package com.android.customview;
 
 import android.app.Application;
-import android.test.ApplicationTestCase;
 
 import com.android.customview.model.LocalPackageManager;
 

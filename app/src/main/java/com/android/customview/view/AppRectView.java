@@ -10,6 +10,7 @@ import android.view.Gravity;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import com.android.customview.tools.Utils;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;

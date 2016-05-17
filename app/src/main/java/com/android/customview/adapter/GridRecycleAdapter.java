@@ -2,7 +2,6 @@ package com.android.customview.adapter;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.support.v4.app.NavUtils;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -12,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.customview.R;
+import com.android.customview.listener.OnClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,11 +27,18 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     private List<String> mStrArray = new ArrayList<>();
 
+    private OnClickListener mListener = null;
+
     public GridRecycleAdapter(Context context,List<String> strArray){
         mContext = context;
         mStrArray = strArray;
         mLayoutInflater = LayoutInflater.from(context);
     }
+
+    public void setListener(final OnClickListener listener) {
+        mListener = listener;
+    }
+
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -39,7 +46,7 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         if(holder != null &&  holder instanceof  GridViewHolder
                 && mStrArray !=null && mStrArray.size()>0) {
             String strDigit = mStrArray.get(position);
@@ -52,6 +59,14 @@ public class GridRecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 } else {
                     ((GridViewHolder) holder).tvNumber.setText(strDigit);
                 }
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(mListener != null){
+                            mListener.onItemClick(position);
+                        }
+                    }
+                });
 
             }
         }

@@ -17,8 +17,6 @@ import com.android.customview.R;
 import com.android.customview.adapter.UnInstallAdapter;
 import com.android.customview.model.LocalPackageManager;
 
-import java.io.FileFilter;
-
 /**
  * Created by litonghui on 2016/4/29.
  */
