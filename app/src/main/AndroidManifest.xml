@@ -24,6 +24,8 @@
         <activity android:name=".activity.ScrollActivity"/>
         <activity android:name=".activity.UninstallActivity"/>
         <activity android:name=".activity.DialogActivity"/>
+        <activity android:name=".activity.LockActivity"/>
+        <activity android:name=".activity.VerifyPDActivity"/>
     </application>
 
 </manifest>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="62dp"
+    android:layout_height="62dp"
+    android:orientation="vertical"  >
+
+    <TextView 
+        android:id="@+id/number_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="36sp"
+        android:textColor="@drawable/number_text_state_gray"/>
+    
+    <ImageView
+        android:id="@+id/delete_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/number_delete_gray"
+        android:contentDescription="@null"
+        android:visibility="invisible" />
+</RelativeLayout>

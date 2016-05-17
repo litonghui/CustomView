@@ -45,6 +45,12 @@
            android:layout_marginTop="5dp"
            android:onClick="onRxClick"
            android:visibility="gone" />
+       <Button
+           android:layout_width="fill_parent"
+           android:layout_height="45dp"
+           android:text="Lock Screem"
+           android:layout_marginTop="5dp"
+           android:onClick="onLockClick"/>
    </LinearLayout>
 
 </ScrollView>

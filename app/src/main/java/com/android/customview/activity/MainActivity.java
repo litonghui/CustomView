@@ -34,6 +34,10 @@ public class MainActivity extends Activity {
     public void onDialogClick(View view){
         startActivity(new Intent(this,DialogActivity.class));
     }
+    public void onLockClick(View view){
+        startActivity(new Intent(this,LockActivity.class));
+    }
+
 
 
 
