@@ -39,6 +39,8 @@ public class DigitalPasswordFragment extends Fragment {
 
     private Context mContext;
 
+    private String mFirstPassword = null;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,7 +91,7 @@ public class DigitalPasswordFragment extends Fragment {
                     if (!TextUtils.isEmpty(strDigit) &&
                             null != mStrPassword) {
                         if ("del".equals(strDigit)) {
-                            if (mStrPassword.length() >0) {
+                            if (mStrPassword.length() > 0) {
                                 mStrPassword.deleteCharAt(mStrPassword.length() - 1);
                                 updateNumSetStatus();
                             }
@@ -97,10 +99,11 @@ public class DigitalPasswordFragment extends Fragment {
                             if (mStrPassword.length() < 4) {
                                 mStrPassword.append(strDigit);
                                 updateNumSetStatus();
-                            } else if (mStrPassword.length() == 4) {
+                            }
+                            if (mStrPassword.length() == 4) {
                                 String password = mStrPassword.toString();
                                 mStrPassword.setLength(0);
-                                updateNumSetStatus();
+                                onDigitalDetected(password);
                             }
                         }
                     }
@@ -109,7 +112,7 @@ public class DigitalPasswordFragment extends Fragment {
         });
     }
 
-    public void updateNumSetStatus() {
+    private void updateNumSetStatus() {
         int num = mStrPassword.length();
         mSetNumberIvi.setImageResource(num > 0 ? R.mipmap.number_set_gray : R.mipmap.number_normal_gray);
         mSetNumberIvii.setImageResource(num > 1 ? R.mipmap.number_set_gray : R.mipmap.number_normal_gray);
@@ -117,5 +120,23 @@ public class DigitalPasswordFragment extends Fragment {
         mSetNumberIviv.setImageResource(num > 3 ? R.mipmap.number_set_gray : R.mipmap.number_normal_gray);
     }
 
+    private void onDigitalDetected(String strPwd){
+        if(!TextUtils.isEmpty(strPwd)){
+            if(TextUtils.isEmpty(mFirstPassword)){
+                mFirstPassword = strPwd;
+                ShowMessage("请再次输入密码");
+            }else{
+                if(strPwd.equals(mFirstPassword)){
+                    getActivity().finish();
+                }else{
+                    mFirstPassword = null;
+                    ShowMessage("密码不匹配，请重新输入密码");
+                }
+            }
+        }
+    }
+    private void ShowMessage(String strMsg) {
+        mMessageTv.setText(strMsg);
+    }
     
 }

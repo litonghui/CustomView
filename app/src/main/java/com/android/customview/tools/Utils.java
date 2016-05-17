@@ -8,6 +8,9 @@ import android.text.TextUtils;
 import android.util.TypedValue;
 import android.widget.TextView;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 /**
  * Created by litonghui on 2016/4/27.
  */
@@ -53,6 +56,31 @@ public class Utils {
         Intent intent = new Intent(Intent.ACTION_DELETE);
         intent.setData(uri);
         context.startActivity(intent);
+    }
+
+    public static String md5(String pwd){
+        if(!TextUtils.isEmpty(pwd)){
+            try {
+                MessageDigest md = MessageDigest.getInstance("MD5");
+                md.update(pwd.getBytes());
+                byte bytes[] = md.digest();
+                int i;
+                StringBuilder buf = new StringBuilder("");
+                for (int offset = 0; offset < bytes.length; offset++) {
+                    i = bytes[offset];
+                    if (i < 0)
+                        i += 256;
+                    if (i < 16)
+                        buf.append("0");
+                    buf.append(Integer.toHexString(i));
+                }
+                return buf.toString();
+            } catch (Exception e) {
+                return null;
+            }
+        }else {
+            return null;
+        }
     }
 
 }
