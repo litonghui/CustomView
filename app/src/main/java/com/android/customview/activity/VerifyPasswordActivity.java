@@ -13,9 +13,9 @@ import com.android.customview.R;
  */
 public abstract class VerifyPasswordActivity extends FragmentActivity {
 
-    protected final  static int TYPE_VERIFICATION = 100;
+    public final  static int TYPE_VERIFICATION = 100;
 
-    protected final static int TYPE_PD_SETTING = 101;
+    public final static int TYPE_PD_SETTING = 101;
 
     protected  int mType;
 

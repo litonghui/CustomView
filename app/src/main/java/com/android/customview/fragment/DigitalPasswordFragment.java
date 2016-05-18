@@ -14,8 +14,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.customview.R;
+import com.android.customview.activity.VerifyPasswordActivity;
 import com.android.customview.adapter.GridRecycleAdapter;
 import com.android.customview.listener.OnClickListener;
+import com.android.customview.tools.LockUtils;
+import com.android.customview.tools.Preferences;
+import com.android.customview.tools.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,10 +45,17 @@ public class DigitalPasswordFragment extends Fragment {
 
     private String mFirstPassword = null;
 
+    private int mType;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = getActivity();
+        if (LockUtils.PwdType.DIGITAL == LockUtils.getCurrentPwdType(getActivity())) {
+            mType = VerifyPasswordActivity.TYPE_VERIFICATION;
+        } else if (LockUtils.PwdType.SLIDE == LockUtils.getCurrentPwdType(getActivity())) {
+            mType = VerifyPasswordActivity.TYPE_PD_SETTING;
+        }
     }
 
     @Nullable
@@ -120,17 +131,31 @@ public class DigitalPasswordFragment extends Fragment {
         mSetNumberIviv.setImageResource(num > 3 ? R.mipmap.number_set_gray : R.mipmap.number_normal_gray);
     }
 
-    private void onDigitalDetected(String strPwd){
-        if(!TextUtils.isEmpty(strPwd)){
-            if(TextUtils.isEmpty(mFirstPassword)){
-                mFirstPassword = strPwd;
-                ShowMessage("请再次输入密码");
-            }else{
-                if(strPwd.equals(mFirstPassword)){
+    private void onDigitalDetected(String strPwd) {
+        if (!TextUtils.isEmpty(strPwd)) {
+            if (mType == VerifyPasswordActivity.TYPE_VERIFICATION) {
+                String savepwd = Preferences.getLockPassword(getContext());
+                String currentpwd = Utils.md5(strPwd);
+                if (!TextUtils.isEmpty(savepwd) &&
+                        !TextUtils.isEmpty(currentpwd) &&
+                        savepwd.equals(currentpwd)) {
                     getActivity().finish();
                 }else{
-                    mFirstPassword = null;
-                    ShowMessage("密码不匹配，请重新输入密码");
+                    ShowMessage("密码错误");
+                }
+            } else {
+                if (TextUtils.isEmpty(mFirstPassword)) {
+                    mFirstPassword = strPwd;
+                    ShowMessage("请再次输入密码");
+                } else {
+                    if (strPwd.equals(mFirstPassword)) {
+                        Preferences.setLockPassword(getActivity(), Utils.md5(strPwd));
+                        LockUtils.setCurrentPwdType(getActivity(), LockUtils.PwdType.DIGITAL);
+                        getActivity().finish();
+                    } else {
+                        mFirstPassword = null;
+                        ShowMessage("密码不匹配，请重新输入密码");
+                    }
                 }
             }
         }

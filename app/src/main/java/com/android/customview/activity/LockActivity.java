@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.android.customview.R;
+import com.android.customview.tools.LockUtils;
+import com.android.customview.tools.Preferences;
+import com.android.customview.tools.Utils;
 import com.android.customview.view.SeleterView;
 
 /**
@@ -43,7 +46,8 @@ public class LockActivity extends Activity{
     public void onSelectClick(View view) {
         switch (view.getId()) {
             case R.id.select_i:
-               // Toast.makeText(mContext,"密码为空",Toast.LENGTH_SHORT).show();
+                Preferences.setLockPassword(mContext, "");
+                LockUtils.setCurrentPwdType(mContext, LockUtils.PwdType.SLIDE);
                 break;
             case R.id.select_ii:
                 startActivity(new Intent(this,VerifyPDActivity.class));
