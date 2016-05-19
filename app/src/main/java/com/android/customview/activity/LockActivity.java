@@ -54,6 +54,7 @@ public class LockActivity extends Activity{
                // Toast.makeText(mContext,"数字密码",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.select_iii:
+                startActivity(new Intent(this,VerifyPTActivity.class));
                // Toast.makeText(mContext,"图形密码",Toast.LENGTH_SHORT).show();
                 break;
             default:

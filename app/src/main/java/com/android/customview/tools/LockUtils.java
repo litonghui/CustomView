@@ -2,6 +2,10 @@ package com.android.customview.tools;
 
 import android.content.Context;
 
+import com.android.customview.view.LockPatternView;
+
+import java.util.List;
+
 /**
  * Created by litonghui on 2016/5/18.
  */
@@ -49,5 +53,13 @@ public class LockUtils {
         }
         Preferences.setLockType(context,String.valueOf(data));
     }
+    public static String convertToPwd(List<LockPatternView.Cell> pattern){
+        StringBuilder builder = new StringBuilder();
+        for(LockPatternView.Cell c: pattern){
+            int tmp = c.mRow * LockPatternView.MATRIX_WIDTH + c.mColumn + 1;
+            builder.append(tmp);
+        }
 
+        return builder.toString();
+    }
 }

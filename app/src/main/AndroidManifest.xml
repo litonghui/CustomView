@@ -26,6 +26,7 @@
         <activity android:name=".activity.DialogActivity"/>
         <activity android:name=".activity.LockActivity"/>
         <activity android:name=".activity.VerifyPDActivity"/>
+        <activity android:name=".activity.VerifyPTActivity"/>
     </application>
 
 </manifest>
