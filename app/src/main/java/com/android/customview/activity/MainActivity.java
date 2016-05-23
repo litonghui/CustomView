@@ -35,7 +35,9 @@ public class MainActivity extends Activity {
         startActivity(new Intent(this,DialogActivity.class));
     }
     public void onLockClick(View view){
-        startActivity(new Intent(this,LockActivity.class));
+        startActivity(new Intent(this,LockActivity.class));}
+    public void onDropClick(View view){
+        startActivity(new Intent(this,BackDropActivity.class));
     }
 
 

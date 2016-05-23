@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by litonghui on 2016/4/27.
@@ -82,5 +83,16 @@ public class Utils {
             return null;
         }
     }
+    private  static final AtomicInteger sNextGeneratedId = new AtomicInteger(1);
 
+    public static int generateViewId() {
+        for (; ; ) {
+            final int result = sNextGeneratedId.get();
+            int newValue = result + 1;
+            if (newValue > 0x00ffffff)
+                newValue = 1;
+            if(sNextGeneratedId.compareAndSet(result,newValue))
+                return result;
+        }
+    }
 }

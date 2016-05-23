@@ -27,6 +27,7 @@
         <activity android:name=".activity.LockActivity"/>
         <activity android:name=".activity.VerifyPDActivity"/>
         <activity android:name=".activity.VerifyPTActivity"/>
+        <activity android:name=".activity.BackDropActivity"/>
     </application>
 
 </manifest>
