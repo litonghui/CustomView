@@ -57,6 +57,13 @@
            android:text="Back Drop"
            android:layout_marginTop="5dp"
            android:onClick="onDropClick"/>
+
+       <Button
+           android:layout_width="fill_parent"
+           android:layout_height="45dp"
+           android:text="Setting View"
+           android:layout_marginTop="5dp"
+           android:onClick="onSetClick"/>
    </LinearLayout>
 
 </ScrollView>

@@ -39,6 +39,9 @@ public class MainActivity extends Activity {
     public void onDropClick(View view){
         startActivity(new Intent(this,BackDropActivity.class));
     }
+    public void onSetClick(View view){
+        startActivity(new Intent(this,SettingActivity.class));
+    }
 
 
 
