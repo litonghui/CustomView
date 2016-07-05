@@ -3,15 +3,18 @@ package com.android.customview.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.android.customview.R;
+import com.android.customview.tools.Utils;
 
 public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.v("lth","code:"+ Utils.getVersionCode()+"  channel:"+Utils.getChannel());
         setContentView(R.layout.activity_main);
     }
     public void onRectClick(View view){
@@ -41,6 +44,10 @@ public class MainActivity extends Activity {
     }
     public void onSetClick(View view){
         startActivity(new Intent(this,SettingActivity.class));
+    }
+
+    public void onSlantedClick(View view){
+        startActivity(new Intent(this,SlantedActivity.class));
     }
 
 

@@ -3,10 +3,14 @@ package com.android.customview.tools;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.widget.TextView;
+
+import com.android.customview.MyApplication;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -94,5 +98,34 @@ public class Utils {
             if(sNextGeneratedId.compareAndSet(result,newValue))
                 return result;
         }
+    }
+
+    public static int getVersionCode() {
+        Context context = MyApplication.getInstance();
+        if(null != context) {
+            try {
+                PackageManager pm = context.getPackageManager();
+                PackageInfo pi = pm.getPackageInfo(context.getPackageName(), 0);
+                return pi.versionCode;
+            } catch (PackageManager.NameNotFoundException e) {
+                e.printStackTrace();
+                return -1;
+            }
+        }else
+            return -1;
+    }
+    public static String getChannel(){
+        Context context = MyApplication.getInstance();
+        if(null != context) {
+            try {
+               ApplicationInfo appInfo = context.getPackageManager().
+                       getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
+                return appInfo.metaData.getString("CHANNEL");
+            } catch (PackageManager.NameNotFoundException e) {
+                e.printStackTrace();
+                return "pc";
+            }
+        }else
+            return "pc";
     }
 }

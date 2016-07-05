@@ -1,6 +1,7 @@
 package com.android.customview;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.android.customview.model.LocalPackageManager;
 
@@ -9,9 +10,13 @@ import com.android.customview.model.LocalPackageManager;
  */
 public class MyApplication extends Application{
 
+    private static Context mInstance ;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        if(mInstance == null)
+            mInstance = this;
         load();
     }
     private void load(){
@@ -22,5 +27,8 @@ public class MyApplication extends Application{
             }
         }).start();
 
+    }
+    public static synchronized  Context getInstance(){
+        return mInstance ;
     }
 }
