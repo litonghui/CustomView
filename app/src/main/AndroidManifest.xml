@@ -34,6 +34,7 @@
         <activity android:name=".activity.BackDropActivity"/>
         <activity android:name=".activity.SettingActivity"/>
         <activity android:name=".activity.SlantedActivity"/>
+        <activity android:name=".activity.ShopActivity"/>
     </application>
 
 </manifest>

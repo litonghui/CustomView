@@ -20,5 +20,10 @@
         <item name="android:windowEnterAnimation">@anim/bottom_in</item>
         <item name="android:windowExitAnimation">@anim/bottom_out</item>
     </style>
-
+    <declare-styleable name="ShoppingView">
+        <attr name="sv_bg_color" format="color" />
+        <attr name="sv_text" format="string" />
+        <attr name="sv_text_size" format="dimension" />
+        <attr name="sv_duration" format="integer" />
+    </declare-styleable>
 </resources>

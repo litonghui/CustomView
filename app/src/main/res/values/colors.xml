@@ -2,7 +2,9 @@
 <resources>
     <color name="highlight_color">#F2F2F2</color>
 
-    <color name="primary">#607D8B</color>
+    <color name="primary">#ff1530</color>
     <color name="primary_dark">#455A64</color>
     <color name="primary_light">#CFD8DC</color>
+
+    <color name="sv_blue">#688fdb</color>
 </resources>

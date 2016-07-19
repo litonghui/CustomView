@@ -24,7 +24,7 @@
        app:slantedLength="28dp"
        app:slantedTextSize="10sp"
        app:slantedMode="left"
-       app:slantedText="Android"
+       app:slantedText="首发"
        app:slantedTextColor="@color/primary_light"/>
     <ImageView
         android:layout_width="120dp"

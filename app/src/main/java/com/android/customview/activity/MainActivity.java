@@ -49,6 +49,9 @@ public class MainActivity extends Activity {
     public void onSlantedClick(View view){
         startActivity(new Intent(this,SlantedActivity.class));
     }
+    public void onShopClick(View view){
+        startActivity(new Intent(this,ShopActivity.class));
+    }
 
 
 
