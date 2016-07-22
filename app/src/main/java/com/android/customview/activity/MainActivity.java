@@ -52,6 +52,9 @@ public class MainActivity extends Activity {
     public void onShopClick(View view){
         startActivity(new Intent(this,ShopActivity.class));
     }
+    public void onRcViewClick(View view){
+        startActivity(new Intent(this,RCViewActivity.class));
+    }
 
 
 

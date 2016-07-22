@@ -35,6 +35,7 @@
         <activity android:name=".activity.SettingActivity"/>
         <activity android:name=".activity.SlantedActivity"/>
         <activity android:name=".activity.ShopActivity"/>
+        <activity android:name=".activity.RCViewActivity"/>
     </application>
 
 </manifest>

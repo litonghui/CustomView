@@ -9,4 +9,8 @@
     <string name="shaprect_info"> 通过xml的shap设置矩形边框。成功</string>
     <string name="clippath_info"> 需求在stroke边框矩形绘制一个进度的状态，通过path 先后画两个矩形，取相交部分，实现左边为边框矩形，右边为直角矩形，成功绘制进度条</string>
 
+
+    <string name="grid_layout_manager">Grid Layout Manager</string>
+    <string name="linear_layout_manager">Linear Layout Manager</string>
+
 </resources>
