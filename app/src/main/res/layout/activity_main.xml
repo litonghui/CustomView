@@ -83,7 +83,12 @@
            android:text="RCView"
            android:layout_marginTop="5dp"
            android:onClick="onRcViewClick"/>
-
+       <Button
+           android:layout_width="fill_parent"
+           android:layout_height="45dp"
+           android:text="GiftCart"
+           android:layout_marginTop="5dp"
+           android:onClick="onGiftClick"/>
    </LinearLayout>
 
 </ScrollView>

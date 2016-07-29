@@ -55,6 +55,9 @@ public class MainActivity extends Activity {
     public void onRcViewClick(View view){
         startActivity(new Intent(this,RCViewActivity.class));
     }
+    public void onGiftClick(View view){
+        startActivity(new Intent(this,GiftCardActivity.class));
+    }
 
 
 

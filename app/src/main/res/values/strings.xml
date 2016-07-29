@@ -13,4 +13,10 @@
     <string name="grid_layout_manager">Grid Layout Manager</string>
     <string name="linear_layout_manager">Linear Layout Manager</string>
 
+
+    <string name="card_title">Gift Card</string>
+    <string name="card_tip">YOU ORDER WILL BE SHIPPED TO:</string>
+
+    <string name="button_buy">Buy</string>
+    <string name="button_check_test">ok</string>
 </resources>
