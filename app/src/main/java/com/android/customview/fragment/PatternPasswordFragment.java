@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import com.android.customview.R;
 import com.android.customview.activity.VerifyPasswordActivity;
-import com.android.customview.model.LocalPackageInfo;
 import com.android.customview.tools.LockUtils;
 import com.android.customview.tools.Preferences;
 import com.android.customview.tools.Utils;

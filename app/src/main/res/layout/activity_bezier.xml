@@ -3,6 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.android.customview.view.SecondOrderBezier
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
     <ImageView
         android:id="@+id/iv_big"
         android:layout_width="60dp"
@@ -22,4 +26,6 @@
         android:background="@mipmap/icon_airplan_open"
         android:layout_marginTop="50dp"
         android:layout_marginRight="50dp" />
+
+
 </FrameLayout>

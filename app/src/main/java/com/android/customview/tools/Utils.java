@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.android.customview.MyApplication;
 
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**

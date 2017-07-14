@@ -3,7 +3,6 @@ package com.android.customview.activity;
 
 import android.support.v4.app.Fragment;
 
-import com.android.customview.fragment.DigitalPasswordFragment;
 import com.android.customview.fragment.PatternPasswordFragment;
 
 /**

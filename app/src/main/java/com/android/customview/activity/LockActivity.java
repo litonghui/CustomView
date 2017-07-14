@@ -9,7 +9,6 @@ import android.view.View;
 import com.android.customview.R;
 import com.android.customview.tools.LockUtils;
 import com.android.customview.tools.Preferences;
-import com.android.customview.tools.Utils;
 import com.android.customview.view.SeleterView;
 
 /**

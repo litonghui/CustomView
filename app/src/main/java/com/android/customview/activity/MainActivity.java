@@ -58,6 +58,13 @@ public class MainActivity extends Activity {
     public void onGiftClick(View view){
         startActivity(new Intent(this,GiftCardActivity.class));
     }
+    public void onExpandableClick(View view){
+        startActivity(new Intent(this,ExpandableActivity.class));
+    }
+
+    public void onMovieRecorderClick(View view){
+        startActivity(new Intent(this,MovieRecorderActivity.class));
+    }
 
 
 

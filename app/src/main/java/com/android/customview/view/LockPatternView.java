@@ -19,7 +19,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewParent;
 
-
 import com.android.customview.R;
 
 import java.util.ArrayList;
@@ -51,7 +50,7 @@ public class LockPatternView extends View {
     /**
      * This is the width of the matrix (the number of dots per row and column).
      * Change this value to change the dimension of the pattern's matrix.
-     * 
+     *
      * @since v2.7 beta
      * @author Thomas Breitbach
      */
@@ -134,7 +133,7 @@ public class LockPatternView extends View {
     private final int mPaddingTop = mPadding;
     private final int mPaddingBottom = mPadding;
 
-    private boolean mIsUsing = false; // Í¼°¸ÊÓÍ¼ÊÇ·ñ±»´¥ÃþÁË
+    private boolean mIsUsing = false; // Í¼ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Ç·ñ±»´ï¿½ï¿½ï¿½ï¿½ï¿½
     private boolean mShowOnLockScreen = false;
 
     /**
@@ -303,11 +302,11 @@ public class LockPatternView extends View {
         super(context, attrs);
 
         TypedArray array = context.obtainStyledAttributes(attrs,
-				R.styleable.LockPatternView);
+                R.styleable.LockPatternView);
 
         mShowOnLockScreen = array.getBoolean(R.styleable.LockPatternView_showOnLockScreen, false);
 
-		array.recycle();
+        array.recycle();
 
         final String aspect = "";// a.getString(R.styleable.LockPatternView_aspect);
 
@@ -336,18 +335,18 @@ public class LockPatternView extends View {
 
         loadDefaultRes();
         if(Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB_MR2)
-        	mBAllRequestParrent = true;
+            mBAllRequestParrent = true;
     }// LockPatternView()
 
     public void resetRes(){
-    	final Bitmap bm = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
-    	mBitmapCircleDefault = mBitmapCircleOK = mBitmapCircleError = bm;
-    	mBitmapWidth = mBitmapHeight = 1;
+        final Bitmap bm = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+        mBitmapCircleDefault = mBitmapCircleOK = mBitmapCircleError = bm;
+        mBitmapWidth = mBitmapHeight = 1;
     }
 
     public void loadDefaultRes(){
-    	mBitmapCircleDefault = getBitmapFor(
-    			mShowOnLockScreen ? R.mipmap.password_pattern_circle_normal_white : R.mipmap.password_pattern_circle_normal_gray);
+        mBitmapCircleDefault = getBitmapFor(
+                mShowOnLockScreen ? R.mipmap.password_pattern_circle_normal_white : R.mipmap.password_pattern_circle_normal_gray);
         mBitmapCircleOK = getBitmapFor(R.mipmap.password_pattern_circle_ok);
         mBitmapCircleError = getBitmapFor(R.mipmap.password_pattern_circle_error);
 
@@ -365,7 +364,7 @@ public class LockPatternView extends View {
     }
 
     public boolean isUsing(){
-    	return mIsUsing;
+        return mIsUsing;
     }
 
     private Bitmap getBitmapFor(int resId) {
@@ -537,19 +536,19 @@ public class LockPatternView extends View {
     }
 
     @SuppressWarnings("unused")
-	private int resolveMeasured(int measureSpec, int desired) {
+    private int resolveMeasured(int measureSpec, int desired) {
         int result = 0;
         int specSize = MeasureSpec.getSize(measureSpec);
         switch (MeasureSpec.getMode(measureSpec)) {
-        case MeasureSpec.UNSPECIFIED:
-            result = desired;
-            break;
-        case MeasureSpec.AT_MOST:
-            result = Math.max(specSize, desired);
-            break;
-        case MeasureSpec.EXACTLY:
-        default:
-            result = specSize;
+            case MeasureSpec.UNSPECIFIED:
+                result = desired;
+                break;
+            case MeasureSpec.AT_MOST:
+                result = Math.max(specSize, desired);
+                break;
+            case MeasureSpec.EXACTLY:
+            default:
+                result = specSize;
         }
         return result;
     }
@@ -587,15 +586,15 @@ public class LockPatternView extends View {
         int viewHeight = getDefaultSize(minimumHeight, heightMeasureSpec);
 
         switch (mAspect) {
-        case ASPECT_SQUARE:
-            viewWidth = viewHeight = Math.min(viewWidth, viewHeight);
-            break;
-        case ASPECT_LOCK_WIDTH:
-            viewHeight = Math.min(viewWidth, viewHeight);
-            break;
-        case ASPECT_LOCK_HEIGHT:
-            viewWidth = Math.min(viewWidth, viewHeight);
-            break;
+            case ASPECT_SQUARE:
+                viewWidth = viewHeight = Math.min(viewWidth, viewHeight);
+                break;
+            case ASPECT_LOCK_WIDTH:
+                viewHeight = Math.min(viewWidth, viewHeight);
+                break;
+            case ASPECT_LOCK_HEIGHT:
+                viewWidth = Math.min(viewWidth, viewHeight);
+                break;
         }
 
         setMeasuredDimension(viewWidth, viewHeight);
@@ -732,17 +731,17 @@ public class LockPatternView extends View {
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
 
-    	// TODO Auto-generated method stub
-    	//if (mBAllRequestParrent || mBRequestParrentViewTouch) {
-        	ViewParent vp = getParent();
-        	do
-        	{
-        		vp.requestDisallowInterceptTouchEvent(true); //
-        		vp = vp.getParent();
-        	}while(vp != null);
-		//}
+        // TODO Auto-generated method stub
+        //if (mBAllRequestParrent || mBRequestParrentViewTouch) {
+        ViewParent vp = getParent();
+        do
+        {
+            vp.requestDisallowInterceptTouchEvent(true); //
+            vp = vp.getParent();
+        }while(vp != null);
+        //}
 
-    	return super.dispatchTouchEvent(ev);
+        return super.dispatchTouchEvent(ev);
     }
 
     @Override
@@ -752,21 +751,21 @@ public class LockPatternView extends View {
         }
 
         switch (event.getAction()) {
-        case MotionEvent.ACTION_DOWN:
-        	mIsUsing = true;
-            handleActionDown(event);
-            return true;
-        case MotionEvent.ACTION_UP:
-        	mBRequestParrentViewTouch = false;
-        	mIsUsing = false;
-            handleActionUp(event);
-            return true;
-        case MotionEvent.ACTION_MOVE:
-        	mIsUsing = true;
-            handleActionMove(event);
-            return true;
-        case MotionEvent.ACTION_CANCEL:
-        	mBRequestParrentViewTouch = false;
+            case MotionEvent.ACTION_DOWN:
+                mIsUsing = true;
+                handleActionDown(event);
+                return true;
+            case MotionEvent.ACTION_UP:
+                mBRequestParrentViewTouch = false;
+                mIsUsing = false;
+                handleActionUp(event);
+                return true;
+            case MotionEvent.ACTION_MOVE:
+                mIsUsing = true;
+                handleActionMove(event);
+                return true;
+            case MotionEvent.ACTION_CANCEL:
+                mBRequestParrentViewTouch = false;
             /*
              * Original source check for mPatternInProgress == true first before
              * calling next three lines. But if we do that, there will be
@@ -774,18 +773,18 @@ public class LockPatternView extends View {
              * the finger. We want the pattern to be reset and the message will
              * be updated after the user did that.
              */
-        	mIsUsing = false;
-            mPatternInProgress = false;
-            resetPattern();
-            notifyPatternCleared();
+                mIsUsing = false;
+                mPatternInProgress = false;
+                resetPattern();
+                notifyPatternCleared();
 
-            if (PROFILE_DRAWING) {
-                if (mDrawingProfilingStarted) {
-                    Debug.stopMethodTracing();
-                    mDrawingProfilingStarted = false;
+                if (PROFILE_DRAWING) {
+                    if (mDrawingProfilingStarted) {
+                        Debug.stopMethodTracing();
+                        mDrawingProfilingStarted = false;
+                    }
                 }
-            }
-            return true;
+                return true;
         }
         return false;
     }
@@ -814,7 +813,7 @@ public class LockPatternView extends View {
             final float dx = Math.abs(x - mInProgressX);
             final float dy = Math.abs(y - mInProgressY);
             if (dx > DRAG_THRESHHOLD || dy > DRAG_THRESHHOLD) {
-            	invalidateNow = true;
+                invalidateNow = true;
             }
 
             if (mPatternInProgress && patternSize > 0) {
@@ -863,12 +862,12 @@ public class LockPatternView extends View {
          * To save updates, we only invalidate if the user moved beyond a
          * certain amount.
          */
-		if (invalidateNow) {
-			mInvalidate.union(mTmpInvalidateRect);
-			invalidate(mInvalidate);
-			mInvalidate.set(mTmpInvalidateRect);
-			invalidate(mTmpInvalidateRect);
-		}
+        if (invalidateNow) {
+            mInvalidate.union(mTmpInvalidateRect);
+            invalidate(mInvalidate);
+            mInvalidate.set(mTmpInvalidateRect);
+            invalidate(mTmpInvalidateRect);
+        }
     }
 
     private void handleActionUp(MotionEvent event) {
@@ -894,7 +893,7 @@ public class LockPatternView extends View {
         final float y = event.getY();
         final Cell hitCell = detectAndAddHit(x, y);
         if (hitCell != null) {
-        	mBRequestParrentViewTouch = true;
+            mBRequestParrentViewTouch = true;
             mPatternInProgress = true;
             mPatternDisplayMode = DisplayMode.Correct;
             notifyPatternStarted();
@@ -1001,25 +1000,25 @@ public class LockPatternView extends View {
             }
 
             if (mPatternDisplayMode == DisplayMode.Wrong){
-            	mPathPaint.setColor(mPathWrongColor);
+                mPathPaint.setColor(mPathWrongColor);
             }else{
-            	mPathPaint.setColor(mPathColor);
+                mPathPaint.setColor(mPathColor);
             }
 
-            // Èç¹ûÂ·¾¶Ð¡ÓÚ0»òÕß´óÓÚ¿í¶ÈµÄ1/8£¬¾Í²»È¥ÉèÖÃ¿í¶È
-			if (mPathWidth >= 0 && mPathWidth < (getWidth() >> 3)) {
-				mPathPaint.setStrokeWidth(mPathWidth);
-			} else {
-				float radius = (squareWidth * mDiameterFactor * 0.5f);
-				mPathPaint.setStrokeWidth(radius);
-			}
-			mPathPaint.setAlpha(mPathAlpha);
-			
-			mPathPaint.setPathEffect(mPathDashPathEffect);
-            
+            // ï¿½ï¿½ï¿½Â·ï¿½ï¿½Ð¡ï¿½ï¿½0ï¿½ï¿½ï¿½ß´ï¿½ï¿½Ú¿ï¿½Èµï¿½1/8ï¿½ï¿½ï¿½Í²ï¿½È¥ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½
+            if (mPathWidth >= 0 && mPathWidth < (getWidth() >> 3)) {
+                mPathPaint.setStrokeWidth(mPathWidth);
+            } else {
+                float radius = (squareWidth * mDiameterFactor * 0.5f);
+                mPathPaint.setStrokeWidth(radius);
+            }
+            mPathPaint.setAlpha(mPathAlpha);
+
+            mPathPaint.setPathEffect(mPathDashPathEffect);
+
             canvas.drawPath(currentPath, mPathPaint);
         }
-        
+
         /*
          * draw the circles
          */
@@ -1037,7 +1036,7 @@ public class LockPatternView extends View {
                 drawCircle(canvas, (int) leftX, (int) topY, drawLookup[i][j]);
             }
         }
-        
+
 
         /*
          * restore default flag
@@ -1053,9 +1052,9 @@ public class LockPatternView extends View {
      *            Whether this circle is part of the pattern.
      */
     private void drawCircle(Canvas canvas, int leftX, int topY,
-            boolean partOfPattern) {
+                            boolean partOfPattern) {
         Bitmap outerCircle;
-        
+
         if (!partOfPattern
                 || (mInStealthMode && mPatternDisplayMode != DisplayMode.Wrong)) {
             /*
