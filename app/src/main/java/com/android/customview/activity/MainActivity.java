@@ -66,6 +66,15 @@ public class MainActivity extends Activity {
         startActivity(new Intent(this,MovieRecorderActivity.class));
     }
 
+    public void onRSBlurClick(View view){
+        startActivity(new Intent(this,RSBlurActivity.class));
+    }
+
+    public void onGradientClick(View view) {
+        startActivity(new Intent(this, GradientActivity.class));
+    }
+
+
 
 
 

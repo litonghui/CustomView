@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import com.android.customview.R;
+import com.android.customview.tools.DownloadUtils;
 import com.android.customview.view.BackdropLayout;
 
 /**
@@ -19,5 +20,8 @@ public class BackDropActivity extends Activity {
         setContentView(R.layout.activity_backdrop);
         mBackdropLayout = (BackdropLayout) findViewById(R.id.backdroply);
         mBackdropLayout.setLayout(R.mipmap.small_icon);
+        DownloadUtils downloadUtils = new DownloadUtils(this);
+        downloadUtils.download("http://appcdn.123.sogou.com/haha/SogouHaha_v3.1_normal.apk",
+                "SogouHaha/V3.1.apk");
     }
 }
