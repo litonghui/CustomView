@@ -112,12 +112,12 @@
            android:layout_marginTop="5dp"
            android:onClick="onRSBlurClick"/>
 
-       <Button
+       <!--<Button
            android:layout_width="fill_parent"
            android:layout_height="45dp"
            android:text="View 蒙层"
            android:layout_marginTop="5dp"
-           android:onClick="onGradientClick"/>
+           android:onClick="onGradientClick"/>-->
    </LinearLayout>
 
 </ScrollView>

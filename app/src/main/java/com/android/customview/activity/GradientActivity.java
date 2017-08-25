@@ -38,7 +38,7 @@ public class GradientActivity extends Activity {
                         (drawableToBitmap
                                 (ContextCompat.getDrawable
                                         (getApplicationContext(), R.mipmap.icon_temp))
-                                ,0xFF670032)
+                                ,0xFF3b2b70)
         );
 
         mImgCode2.setImageBitmap(
@@ -46,7 +46,7 @@ public class GradientActivity extends Activity {
                         (drawableToBitmap
                                 (ContextCompat.getDrawable
                                         (getApplicationContext(), R.mipmap.icon_temp))
-                                ,0xFF670032)
+                                ,0xFF3b2b70)
         );
     }
 
@@ -75,15 +75,16 @@ public class GradientActivity extends Activity {
         canvas.drawBitmap(originalBitmap, 0, 0, null);
 
         Paint paint = new Paint();
-        LinearGradient linearGradient = new LinearGradient(0, height / 4, 0, height * 3 / 4,
-                Color.TRANSPARENT, templateColor, Shader.TileMode.CLAMP);
+        LinearGradient linearGradient = new LinearGradient(0, height / 3, 0, height * 5 / 6,
+                templateColor & 0X00FFFFFF, templateColor, Shader.TileMode.CLAMP);
         paint.setShader(linearGradient);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP));
         canvas.drawRect(0, 0, width, height, paint);
         return updatedBitmap;
     }
 
-    public static Bitmap addGradient2(Bitmap originalBitmap,int templateColor) {
+    public static Bitmap
+    addGradient2(Bitmap originalBitmap,int templateColor) {
         int width = originalBitmap.getWidth();
         int height = originalBitmap.getHeight();
         Bitmap updatedBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
@@ -92,7 +93,7 @@ public class GradientActivity extends Activity {
 
         Paint paint = new Paint();
         BitmapShader bitmapShader = new BitmapShader(originalBitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
-        LinearGradient linearGradient = new LinearGradient(0, height / 4, 0, height * 3 / 4,
+        LinearGradient linearGradient = new LinearGradient(0, height / 3, 0, height * 2 / 3,
                 Color.TRANSPARENT, templateColor,
                 Shader.TileMode.CLAMP);
         ComposeShader composeShader = new ComposeShader(bitmapShader, linearGradient, PorterDuff.Mode.SRC_ATOP);
