@@ -74,6 +74,10 @@ public class MainActivity extends Activity {
         startActivity(new Intent(this, GradientActivity.class));
     }
 
+    public void onCircularClick(View view) {
+        startActivity(new Intent(this, CircularFillableActivity.class));
+    }
+
 
 
 

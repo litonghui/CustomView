@@ -1,123 +1,144 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
         <Button
             android:layout_width="fill_parent"
             android:layout_height="45dp"
-            android:text="绘制空心矩形边框"
             android:layout_marginTop="5dp"
-            android:onClick="onRectClick"/>
-       <Button
-           android:layout_width="fill_parent"
-           android:layout_height="45dp"
-           android:text="贝塞尔曲线"
-           android:layout_marginTop="5dp"
-           android:onClick="onBezierClick"/>
-       <Button
-           android:layout_width="fill_parent"
-           android:layout_height="45dp"
-           android:text="水平滑动应用"
-           android:layout_marginTop="5dp"
-           android:onClick="onScrollClick"/>
-       <Button
-           android:layout_width="fill_parent"
-           android:layout_height="45dp"
-           android:text="软件卸载"
-           android:layout_marginTop="5dp"
-           android:onClick="onUninstallClick"/>
-       <Button
-           android:layout_width="fill_parent"
-           android:layout_height="45dp"
-           android:text="动画弹窗"
-           android:layout_marginTop="5dp"
-           android:onClick="onDialogClick"/>
-       <Button
-           android:layout_width="fill_parent"
-           android:layout_height="45dp"
-           android:text="RxAndroid"
-           android:layout_marginTop="5dp"
-           android:onClick="onRxClick"
-           android:visibility="gone" />
-       <Button
-           android:layout_width="fill_parent"
-           android:layout_height="45dp"
-           android:text="Lock Screem"
-           android:layout_marginTop="5dp"
-           android:onClick="onLockClick"/>
-       <Button
-           android:layout_width="fill_parent"
-           android:layout_height="45dp"
-           android:text="Back Drop"
-           android:layout_marginTop="5dp"
-           android:onClick="onDropClick"/>
+            android:onClick="onRectClick"
+            android:text="绘制空心矩形边框" />
 
-       <Button
-           android:layout_width="fill_parent"
-           android:layout_height="45dp"
-           android:text="Setting View"
-           android:layout_marginTop="5dp"
-           android:onClick="onSetClick"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onBezierClick"
+            android:text="贝塞尔曲线" />
 
-       <Button
-           android:layout_width="fill_parent"
-           android:layout_height="45dp"
-           android:text="SlantedTextView"
-           android:layout_marginTop="5dp"
-           android:onClick="onSlantedClick"/>
-       <Button
-           android:layout_width="fill_parent"
-           android:layout_height="45dp"
-           android:text="ShopView"
-           android:layout_marginTop="5dp"
-           android:onClick="onShopClick"/>
-       <Button
-           android:layout_width="fill_parent"
-           android:layout_height="45dp"
-           android:text="RCView"
-           android:layout_marginTop="5dp"
-           android:onClick="onRcViewClick"/>
-       <Button
-           android:layout_width="fill_parent"
-           android:layout_height="45dp"
-           android:text="GiftCart"
-           android:layout_marginTop="5dp"
-           android:onClick="onGiftClick"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onScrollClick"
+            android:text="水平滑动应用" />
 
-       <Button
-           android:layout_width="fill_parent"
-           android:layout_height="45dp"
-           android:text="ExpandableView"
-           android:layout_marginTop="5dp"
-           android:onClick="onExpandableClick"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onUninstallClick"
+            android:text="软件卸载" />
 
-       <Button
-           android:layout_width="fill_parent"
-           android:layout_height="45dp"
-           android:text="MovieRecorder"
-           android:layout_marginTop="5dp"
-           android:onClick="onMovieRecorderClick"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onDialogClick"
+            android:text="动画弹窗" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onRxClick"
+            android:text="RxAndroid"
+            android:visibility="gone" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onLockClick"
+            android:text="Lock Screem" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onDropClick"
+            android:text="Back Drop" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onSetClick"
+            android:text="Setting View" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onSlantedClick"
+            android:text="SlantedTextView" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onShopClick"
+            android:text="ShopView" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onRcViewClick"
+            android:text="RCView" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onGiftClick"
+            android:text="GiftCart" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onExpandableClick"
+            android:text="ExpandableView" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onMovieRecorderClick"
+            android:text="MovieRecorder" />
 
 
-       <Button
-           android:layout_width="fill_parent"
-           android:layout_height="45dp"
-           android:text="高斯模糊效果"
-           android:layout_marginTop="5dp"
-           android:onClick="onRSBlurClick"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onRSBlurClick"
+            android:text="高斯模糊效果" />
 
-       <!--<Button
-           android:layout_width="fill_parent"
-           android:layout_height="45dp"
-           android:text="View 蒙层"
-           android:layout_marginTop="5dp"
-           android:onClick="onGradientClick"/>-->
-   </LinearLayout>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onGradientClick"
+            android:text="View 蒙层" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:onClick="onCircularClick"
+            android:text="Circular 波浪" />
+    </LinearLayout>
 
 </ScrollView>

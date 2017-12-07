@@ -47,6 +47,8 @@
         <activity android:name=".activity.MovieRecorderActivity"/>
         <activity android:name=".activity.RSBlurActivity"/>
         <activity android:name=".activity.GradientActivity"/>
+        <activity android:name=".activity.CircularFillableActivity">
+        </activity>
 
         <provider
             android:name="android.support.v4.content.FileProvider"
